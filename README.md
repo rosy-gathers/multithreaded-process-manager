@@ -1,0 +1,118 @@
+\# Multithreaded Process Manager Simulator
+
+
+
+A simulation of an operating system process manager implemented in C using POSIX threads.
+
+
+
+\## Project Overview
+
+
+
+This project simulates how an operating system manages processes internally using a shared process table. Multiple worker threads execute commands concurrently while a monitor thread tracks changes.
+
+
+
+\## Features
+
+
+
+\- Process table supporting up to 64 processes
+
+\- Process Control Blocks (PCB)
+
+\- Parent-child process relationships
+
+\- Process states: RUNNING, BLOCKED, ZOMBIE
+
+\- Multithreading using POSIX threads
+
+\- Mutex synchronization
+
+\- Monitor thread logging snapshots
+
+
+
+\## Project Architecture
+
+
+
+&#x20;            +----------------------+
+
+&#x20;            |   Script Files       |
+
+&#x20;            | thread0.txt ...      |
+
+&#x20;            +----------+-----------+
+
+&#x20;                       |
+
+&#x20;                       v
+
+&#x20;               +--------------+
+
+&#x20;               | Worker       |
+
+&#x20;               | Threads      |
+
+&#x20;               +--------------+
+
+&#x20;                       |
+
+&#x20;                       v
+
+&#x20;              +------------------+
+
+&#x20;              | Process Manager  |
+
+&#x20;              | (Shared Table)   |
+
+&#x20;              +------------------+
+
+&#x20;                       |
+
+&#x20;                       v
+
+&#x20;              +------------------+
+
+&#x20;              | Monitor Thread   |
+
+&#x20;              | prints snapshots |
+
+&#x20;              +------------------+
+
+&#x20;                       |
+
+&#x20;                       v
+
+&#x20;                snapshots.txt
+
+
+
+\## Compilation
+
+
+
+gcc src/pm\_sim.c -o pm\_sim -lpthread
+
+
+
+\## Run
+
+
+
+./pm\_sim scripts/thread0.txt scripts/thread1.txt scripts/thread2.txt scripts/thread3.txt
+
+
+
+\## Output
+
+
+
+Snapshots are written to:
+
+
+
+output/snapshots.txt
+
