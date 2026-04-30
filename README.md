@@ -144,3 +144,12 @@ Author
 Taspiha Tabassum  
 Computer Science Student  
 BRAC University
+
+---
+
+License
+------
+
+This project is licensed under the MIT License.
+
+
