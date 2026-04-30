@@ -89,13 +89,17 @@ Supported Commands
 
 Compilation
 -----------
-`gcc src/pm_sim.c -o pm_sim -lpthread`
+```bash
+gcc src/pm_sim.c -o pm_sim -lpthread
+```
 
 ---
 
 Run the Program
 ---------------
-`./pm_sim scripts/thread0.txt scripts/thread1.txt scripts/thread2.txt scripts/thread3.txt`
+```bash
+./pm_sim scripts/thread0.txt scripts/thread1.txt scripts/thread2.txt scripts/thread3.txt
+```
 
 Each script file is executed by a separate worker thread.
 
@@ -108,7 +112,7 @@ Example Output
 
 Snapshots of the process table are stored in:
 
-output/snapshots.txt
+`output/snapshots.txt`
 
 ---
 
